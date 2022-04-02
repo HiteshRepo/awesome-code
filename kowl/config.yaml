@@ -1,0 +1,12 @@
+kafka:
+  brokers:
+    - broker:29092
+  protobuf:
+    enabled: true
+    mappings:
+      - topicName: user.v1
+        valueProtoType: user.v1.User
+    fileSystem:
+      enabled: true
+      paths:
+        - ./proto
