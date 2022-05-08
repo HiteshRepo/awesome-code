@@ -2,7 +2,6 @@ package main
 
 import (
 	"context"
-	"fmt"
 	"github.com/hiteshrepo/StringProcessingPipeline/internal/app"
 	"github.com/hiteshrepo/StringProcessingPipeline/internal/app/handlers"
 	"github.com/hiteshrepo/StringProcessingPipeline/internal/app/router"
@@ -19,7 +18,6 @@ func main() {
 	displayChan := make(chan string)
 
 	q := queue.NewQueue()
-
 	sph := handlers.GetNewStringPipelineHandler(q)
 
 	r := router.GetNewRouter(sph)
@@ -30,7 +28,6 @@ func main() {
 
 	<-interrupt()
 
-	fmt.Println("calling shutdown")
 	a.Shutdown(cancel)
 }
 

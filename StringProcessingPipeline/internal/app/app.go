@@ -36,12 +36,14 @@ func (a *App) Start(ctx context.Context) {
 		WriteTimeout: 15 * time.Second,
 		ReadTimeout:  15 * time.Second,
 	}
-
-	log.Fatal(srv.ListenAndServe())
+	fmt.Println("starting server")
+	go func() {
+		log.Fatal(srv.ListenAndServe())
+	}()
 }
 
 func (a *App) Shutdown(cancelFunc context.CancelFunc) {
-	fmt.Println("closing channels")
+	fmt.Println("shutting down: closing channels")
 	cancelFunc()
 	close(a.trimChan)
 	close(a.capitalChan)

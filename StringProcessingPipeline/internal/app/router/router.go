@@ -8,7 +8,8 @@ import (
 func GetNewRouter(sph *handlers.StringPipelineHandler) *mux.Router {
 	r := mux.NewRouter()
 
-	r.HandleFunc("/sph/", sph.AddStringToQueueHandler).Methods("POST")
+	r.HandleFunc("/sph", sph.AddStringToQueueHandler).Methods("POST")
+	r.HandleFunc("/sph/stop", sph.StopServerHandler).Methods("POST")
 
 	return r
 }

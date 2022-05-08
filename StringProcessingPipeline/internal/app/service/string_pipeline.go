@@ -2,6 +2,7 @@ package service
 
 import (
 	"context"
+	"fmt"
 	"github.com/hiteshrepo/StringProcessingPipeline/internal/pkg/queue"
 	"github.com/hiteshrepo/StringProcessingPipeline/internal/pkg/string_manipulator"
 )
@@ -41,22 +42,26 @@ func (sps *StringPipelineService) StripWhitespace() {
 	for datum := range sps.trimChan {
 		sps.capitalChan <- sps.manipulator.StripWhitespace(datum)
 	}
+	fmt.Println("trimChan closed")
 }
 
 func (sps *StringPipelineService) ToUppercase() {
 	for datum := range sps.capitalChan {
 		sps.reverseChan <- sps.manipulator.ToUppercase(datum)
 	}
+	fmt.Println("capitalChan closed")
 }
 
 func (sps *StringPipelineService) Reverse() {
 	for datum := range sps.reverseChan {
 		sps.displayChan <- sps.manipulator.Reverse(datum)
 	}
+	fmt.Println("reverseChan closed")
 }
 
 func (sps *StringPipelineService) Display() {
 	for datum := range sps.displayChan {
 		sps.manipulator.Display(datum)
 	}
+	fmt.Println("displayChan closed")
 }
