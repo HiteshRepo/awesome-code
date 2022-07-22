@@ -1,0 +1,33 @@
+version: '3'
+
+tasks:
+  generate:
+    desc: "Generate code"
+    cmds:
+      - buf mod update
+      - buf generate
+      - go generate -tags wireinject ./...
+
+  clean-cache:
+    desc: "Clear all task cache"
+    cmds:
+      - rm -rf .task
+
+  clean-builds:
+    desc: "Clear all binaries"
+    cmds:
+      - rm -rf ./build/out
+
+  clean-generate:
+    desc: "Clear all generated code"
+    cmds:
+      - find . -type f -name "*.pb.go" -not -wholename './vendor/*'| xargs rm
+      - find . -type f -name "*pb_test.go" -not -wholename './vendor/*'| xargs rm
+      - find . -type f -name "wire_gen.go" -not -wholename './vendor/*'| xargs rm
+
+  prune:
+    desc: "Clean all"
+    cmds:
+      - task: clean-cache
+      - task: clean-builds
+      - task: clean-generate
