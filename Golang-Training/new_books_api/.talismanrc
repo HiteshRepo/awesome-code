@@ -1,0 +1,30 @@
+fileignoreconfig:
+- filename: go.sum
+  checksum: 3a940664b60eaee53f35a3a0da7627ce9a29c4b3725fe75c24e5762f48f29b71
+- filename: internal/app/constants/constants.go
+  checksum: fc378e8cb92e67ee284191fef7deb89641b42a450a12070d614b26b54c9d1c03
+- filename: internal/app/handlers/books_handler.go
+  checksum: aa4ce47f138e31ff428817ee4d5d87205a2c1511a44812155000fe814257df43
+- filename: configs/local.yaml
+  checksum: b95f2e16e0e9c08c662a1af13241a82898a548e0b6445fba4b4cd6b4da9ac3da
+- filename: configs/default.yaml
+  checksum: 410060d2499356996ea43bce25d66a41a379051e029ee079b3e556db2277aff6
+- filename: internal/pkg/configs/db/db_config.go
+  checksum: 366ec67b3154ece8eefe72a4a173fd2e839ee319725c98848d6a00535ba3625e
+- filename: internal/pkg/configs/configs.go
+  checksum: 60468eba5b3c1084f16f06452daed86ede527f03149f9f6407387744bc1cb378
+- filename: internal/pkg/db/db.go
+  checksum: d6c14524b8c22fc1f314c80c68b02356b28c2d8623aa1dbf112fb9f20d072a47
+- filename: internal/app/db/migrations/scripts/000001_create_books_table.up.sql
+  checksum: 7133e028b04d548fa436c829859aca84e35d7b06f2aa8e3a88f7f5463c606948
+- filename: internal/app/db/migrations/scripts/000002_insert_books_seed_data.up.sql
+  checksum: f3e5d95e4ac3a5a1876f9b34f5831f5cd545e95772b0ff9a29e350fc02a190ad
+- filename: test/scripts/000001_create_books_table.up.sql
+  checksum: cb20604f7ce0f3a9917a199266e73342841cc618319970b4455381d2c54353c8
+- filename: test/scripts/000002_insert_books_seed_data.up.sql
+  checksum: c5cd845eb337e950e25e10b59fd60145ce8980d7aecffa2f8fb0652431bc64c0
+- filename: test/suites/postgres_suite.go
+  checksum: e57cbe74062de475df5c8fac23a837948d8e4fc0c2588bd0ec3467974beb552c
+- filename: test/integration/new_books_api_integration_test.go
+  checksum: 0f5d84df71e2c557c96fd14d148397d5eb827b2aff472248d03190f6d65ab478
+version: ""

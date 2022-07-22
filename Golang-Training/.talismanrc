@@ -1,0 +1,13 @@
+fileignoreconfig:
+- filename: go.sum
+  checksum: 6fdd451419655ceafedfbf224537ff8d3e4558b45ae82c015088578f97586f66
+- filename: basics-2/enumeration.go
+  checksum: b4e677d2099c9feed419d04789ee16cb0ead568b0c39dde9b9ab8fb02f2acb94
+- filename: test_containers/README.md
+  checksum: 6ef09bdf8be127cb67c4db3e36d9cabe4cfb2709afb0987e105767e11153844e
+- filename: kafka/producer/producer.go
+  checksum: 0baa0ba87413a7814e163f8ea953098add63327b676e867041ce455d87ab9176
+scopeconfig:
+  - scope: go
+
+version: "1.0"
