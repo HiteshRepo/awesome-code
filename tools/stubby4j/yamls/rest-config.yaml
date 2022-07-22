@@ -1,0 +1,55 @@
+- request:
+    method:
+      - GET
+      - POST
+      - PUT
+    url: ^/resources/asn/.*$
+
+  response:
+    status: 200
+    body: >
+      {"status": "ASN found!"}
+    headers:
+      content-type: application/json
+
+
+- request:
+    method:
+      - GET
+      - POST
+      - PUT
+    url: /this/stub/should/always/be/second/in/this/file
+
+  response:
+    status: 200
+    body: OK
+    headers:
+      content-type: application/json
+
+
+- request:
+    method: GET
+    url: /invoice
+    query:
+      status: active
+      type: full
+  response:
+    headers:
+      content-type: application/json
+      pragma: no-cache
+    status: 200
+    file: response.json
+
+
+- request:
+    headers:
+      authorization-basic: bob:secret
+    method: POST
+    url: /item/submit
+    post: >
+      {"action" : "submit"}
+  response:
+    headers:
+      content-type: text/plain
+    status: 200
+    body: OK

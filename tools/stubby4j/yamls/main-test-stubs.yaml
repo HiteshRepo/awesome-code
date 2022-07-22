@@ -1,0 +1,3 @@
+includes:
+  - websocket-config.yaml
+  - rest-config.yaml

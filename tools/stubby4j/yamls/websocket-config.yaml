@@ -1,0 +1,75 @@
+- web-socket:
+    description: this is a web-socket config
+    url: /ohlc/v2
+
+    on-open:
+      policy: once
+      message-type: text
+      body: You have been successfully connected
+      delay: 200
+
+    on-message:
+      - client-request:
+          message-type: text
+          body: 24~CCCAGG~BTC~USD~m
+        server-response:
+          policy: push
+          message-type: text
+          file: response.json
+          delay: 10
+- web-socket:
+    description: this is a web-socket config
+    url: /demo/hello/1
+    sub-protocols: echo, mamba, zumba
+
+    on-open:
+      policy: once
+      message-type: text
+      body: You have been successfully connected
+      delay: 200
+
+    on-message:
+      - client-request:
+          message-type: text
+          body: do push
+        server-response:
+          policy: push
+          message-type: text
+          body: pushing
+          delay: 50
+
+      - client-request:
+          message-type: text
+          body: hello
+        server-response:
+          policy: once
+          message-type: text
+          body: bye-bye
+          delay: 250
+
+      - client-request:
+          message-type: text
+          body: disconnect with a message
+        server-response:
+          policy: disconnect
+          message-type: text
+          body: bon-voyage
+          delay: 250
+
+- web-socket:
+    url: /demo/hello/6
+    sub-protocols: echo, mamba, zumba
+
+    on-open:
+      policy: ping
+      delay: 100
+
+- web-socket:
+    url: /demo/hello/7
+    sub-protocols: echo, mamba, zumba
+
+    on-open:
+      policy: once
+      message-type: binary
+      body: "E.T., call home"
+      delay: 200
