@@ -1,0 +1,14 @@
+foo: bar
+baz:
+  - qux
+  - 123
+  - true
+  - false
+  - null
+  - hello
+world:
+  hello: world
+  nested:
+    - item1
+    - item2
+    - item3
